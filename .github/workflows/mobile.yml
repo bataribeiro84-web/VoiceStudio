@@ -442,7 +442,7 @@ jobs:
           ram-size: 4096M
           disk-size: 6G
           working-directory: mobile/android
-          script: ./gradlew --no-daemon connectedDebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.class=com.voicestudio.mobile.LocalInferenceTest#smallestModelsProduceSpeechAndRecognizeItOffline,com.voicestudio.mobile.LocalInferenceTest#speechPresetAndReferenceModelsProduceAudioOffline -Pandroid.testInstrumentationRunnerArguments.speechInferenceSmoke=true -Pandroid.testInstrumentationRunnerArguments.localInferenceSmoke=true -Pandroid.testInstrumentationRunnerArguments.downloadSmokeModels=true -Pandroid.testInstrumentationRunnerArguments.acceptModelLicencesForSmoke=true
+          script: ./gradlew --no-daemon connectedDebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.class=com.voicestudio.mobile.LocalInferenceTest#smallestModelsProduceSpeechAndRecognizeItOffline,com.voicestudio.mobile.LocalInferenceTest#speechPresetAndReferenceModelsProduceAudioOffline,com.voicestudio.mobile.SupertonicPortugueseTest#supertonicGeneratesBrazilianPortugueseOffline -Pandroid.testInstrumentationRunnerArguments.speechInferenceSmoke=true -Pandroid.testInstrumentationRunnerArguments.localInferenceSmoke=true -Pandroid.testInstrumentationRunnerArguments.supertonicPtBrSmoke=true -Pandroid.testInstrumentationRunnerArguments.downloadSmokeModels=true -Pandroid.testInstrumentationRunnerArguments.acceptModelLicencesForSmoke=true
 
       # Last: record that these inputs passed, for later runs to skip.
       - if: steps.pass.outputs.hit != 'true' && steps.pass.outputs.record == 'true'
